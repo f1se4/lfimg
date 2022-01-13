@@ -1,5 +1,5 @@
 # lf configuration forked from [cirala/lfimg](https://github.com/cirala/lfimg)
-I liked a lot ranger, but in old machines lf is quite faster than ranger, so I have been migrating to lf, looking for a configuration similar to my ranger config without much additional work I have found cirala's one, that I have found perfect for my scope. I have adapted for some debian packages and to my layout preferences. 
+I like a lot ranger, but in old machines lf is quite faster than ranger, so I have been migrating to lf, looking for a configuration similar to my ranger config without much additional work I have found cirala's one, that I have found perfect for my scope. I have adapted for some debian packages and to my layout preferences. 
 
 # Image preview support for lf (list files) using Überzug
 
