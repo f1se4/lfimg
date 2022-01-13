@@ -1,10 +1,10 @@
+set ratios 1:2:3
+set previewer ~/.config/lf/preview
 # Basic Settings
-set hidden false
 set drawbox true
 set icons true
 set ignorecase true
 
-set preview ~/.config/lf/preview
 set cleaner ~/.config/lf/cleaner
 
 # Custom Functions
@@ -15,36 +15,6 @@ cmd open ${{
     esac
 }}
 
-cmd mkdir ${{
-  printf "Directory Name: "
-  read ans
-  mkdir $ans
-}}
-
-cmd mkfile ${{
-  printf "File Name: "
-  read ans
-  $EDITOR $ans
-}}
-
-cmd chmod ${{
-  printf "Mode Bits: "
-  read ans
-
-  for file in "$fx"
-  do
-    chmod $ans $file
-  done
-
-  lf -remote 'send reload'
-}}
-
-cmd sudomkfile ${{
-  printf "File Name: "
-  read ans
-  sudo $EDITOR $ans
-}}
-
 cmd fzf_jump ${{
   res="$(find . -maxdepth 3 | fzf --reverse --header='Jump to location')"
   if [ -f "$res" ]; then
@@ -53,10 +23,6 @@ cmd fzf_jump ${{
     cmd="cd"
   fi
   lf -remote "send $id $cmd \"$res\""
-}}
-
-cmd open_config  ${{
-  $EDITOR $(bookmenu -b ~/.config/bookmenu/configs -f fzf -o)
 }}
 
 # Archive bindings
@@ -144,7 +110,6 @@ map md mkdir
 map ms $mkscript
 map ch chmod
 map bg setwallpaper
-map o open_config
 map br $vimv $fx
 map r rename
 map H top
@@ -155,7 +120,6 @@ map U unselect
 
 # Movement
 map gtr cd ~/.local/share/Trash/files
-map gus cd /run/media/brodie
 
 map gv. cd ~/Videos
 
@@ -171,4 +135,4 @@ map gr. cd ~/Documents/source
 map gc cd ~/.config
 map gC cd ~/.configfiles/
 
-map \;j cd ~
+map gh cd ~

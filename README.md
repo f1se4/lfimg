@@ -2,6 +2,8 @@
 
 This set of scripts is used along lf to generate image previews and much like [vifmimg](https://github.com/cirala/vifmimg) it is able to handle image, video and ebook previews.
 
+![image](https://raw.githubusercontent.com/f1se4/lfimg/master/screenshot.png)
+
 When a SSH-connection has been established, [chafa](https://github.com/hpjansson/chafa) will be used instead.
 
 ## Prerequisites

@@ -12,9 +12,9 @@ image() {
 batorcat() {
 	file="$1"
 	shift
-	if command -v bat > /dev/null 2>&1
+	if command -v batcat > /dev/null 2>&1
 	then
-		bat --color=always --style=plain --pager=never "$file" "$@"
+		batcat --color=always --style=plain --pager=never "$file" "$@"
 	else
 		cat "$file"
 	fi
@@ -41,7 +41,7 @@ case "$(printf "%s\n" "$(readlink -f "$1")" | awk '{print tolower($0)}')" in
 		ssconvert --export-type=Gnumeric_stf:stf_csv "$1" "fd://1" | batorcat --language=csv
 		;;
 	*.wav|*.mp3|*.flac|*.m4a|*.wma|*.ape|*.ac3|*.og[agx]|*.spx|*.opus|*.as[fx]|*.mka)
-		exiftool "$1"
+		cmus "$1"
 		;;
 	*.pdf)
 		[ ! -f "${CACHE}.jpg" ] && \
